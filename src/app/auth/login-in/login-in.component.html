@@ -1,0 +1,42 @@
+<p>login-in works!</p>
+<!-- <table>
+    <tr *ngFor="let val of submitForm()">
+        <td>
+
+        </td>
+    </tr>
+</table> -->
+<div class="container">
+    <div class="row justify-content-center">
+      <div class="col-md-6">
+        <form class="card" #loginForm="ngForm" (ngSubmit)="loginSubmit()">
+          <div class="card-header bg-primary text-white">
+            <h4 class="mb-0">Login</h4>
+          </div>
+          <div class="card-body">
+            <div class="mb-3">
+              <label for="username" class="form-label">Username</label>
+              <input type="text" class="form-control" id="username" name="username" required [(ngModel)]="loginDetails.username" >
+            </div>
+            <div class="mb-3">
+              <label for="password" class="form-label">Password</label>
+              <input type="password" class="form-control" id="password" name="password" required [(ngModel)]="loginDetails.password">
+            </div>
+            <div *ngIf="valiDateCreds()">
+                    <p>User is Valid </p>
+                    <div class="text-center">
+              <button type="submit" class="btn btn-primary" (click)="showMessage=true" >Login
+
+              </button>
+         <p  [ngStyle]="{ 'display': showMessage ? 'block' : 'none', 'color': 'green' }">Login Success</p>
+
+            </div>
+            </div>
+            <div>
+                <p>Submit Wont Appear Unless User is Valid!<br> Please Click On The sign In Button To Sign in </p>
+            </div>  
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>

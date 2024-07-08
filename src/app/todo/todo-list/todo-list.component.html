@@ -1,0 +1,31 @@
+<!-- <p>todo-list works!</p>
+
+<button (click)="addNewTask()">Add a New Task</button>
+
+<table (taskAdder)="1">
+    <tr *ngIf="taskAdder">
+        <td><input type="text" placeholder="Enter Your Task"></td>
+    </tr >
+
+</table>
+
+<p (taskAdder)="resetTaskAdder()"></p>
+ -->
+
+ <button (click)="addNewTask()">Click For New Task</button>
+ <button (click)="resetAllTask()">Empty All Task </button>
+
+
+<div *ngIf="taskAdder">
+        <input type="text" [(ngModel)]="noteparameter">
+        <button (click)="resetTaskCounter()">Submit </button>
+</div>
+
+<table *ngIf="noteList">
+    <tr  *ngFor="let note of noteList">
+        <td>{{note}}</td>
+        <button (click)="removeTask(note) ">Remove</button>
+    </tr>
+</table>
+
+
